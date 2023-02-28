@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <>
       <motion.div
-        className='flex min-h-screen flex-col items-center justify-center'
+        className='flex h-screen flex-col items-center justify-center'
         variants={variant}
         initial='hidden'
         animate='visible'
@@ -62,7 +62,7 @@ export default function Home() {
           variants={item}
         >
           <Link
-            href='/pages/home'
+            href='/about'
             className='flex items-center justify-center gap-2 transition-colors duration-1000 hover:text-zinc-400'
           >
             GET INSIDE <FontAwesomeIcon size='sm' icon={faArrowRightLong} />
