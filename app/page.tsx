@@ -1,91 +1,94 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import { faArrowRightLong, faEye } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { motion } from 'framer-motion'
+import Head from 'next/head'
+import Link from 'next/link'
+import React, { useCallback, useEffect, useState } from 'react'
 
-const inter = Inter({ subsets: ['latin'] })
+import { Gradient } from '../public/Gradient'
+
+const variant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 1,
+    },
+  },
+}
+
+const item = {
+  hidden: {
+    y: -30,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      ease: 'easeInOut',
+      Animation: 'spring',
+    },
+  },
+}
 
 export default function Home() {
+  const [isButtonClicked, setIsButtonClicked] = useState(false)
+  const gradient = new Gradient()
+
+  const initGradient = useCallback(() => {
+    gradient.initGradient('#gradient-canvas')
+  }, [])
+
+  useEffect(() => {
+    initGradient()
+  }, [initGradient])
+
+  const title = 'Tyler Miranda Hayashi'
+  const description = 'My Portfolio.'
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <motion.div
+        className='flex min-h-screen flex-col items-center justify-center'
+        variants={variant}
+        initial='hidden'
+        animate='visible'
+      >
+        <div
+          className={`h-64 w-64 lg:h-96 lg:w-1/2 ${isButtonClicked
+            ? 'mt-10 scale-x-[1.7] scale-y-[2] transition-all duration-1000'
+            : 'transition-all duration-1000'
+            }
+            }`}
+          onClick={() => setIsButtonClicked(false)}
+        >
+          <canvas
+            id='gradient-canvas'
+            className='h-full w-full shadow-3xl drop-shadow-2xl'
+          />
+        </div>
+        <motion.div
+          className='align-center flex items-center gap-[5rem] pt-5 text-base font-bold'
+          variants={item}
+        >
+          <Link
+            href='/content/home'
+            className='flex items-center justify-center gap-2 transition-colors duration-1000 hover:text-zinc-400'
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+            GET INSIDE <FontAwesomeIcon size='sm' icon={faArrowRightLong} />
+          </Link>
+          <button
+            className='hidden lg:block'
+            onClick={() => setIsButtonClicked(true)}
+          >
+            <FontAwesomeIcon icon={faEye} />
+          </button>
+        </motion.div>
+      </motion.div>
+    </>
   )
 }
