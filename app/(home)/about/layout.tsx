@@ -7,10 +7,12 @@ export const metadata = {
     description: 'About me.',
 }
 
-export default function BlogLayout({ children }: AboutLayoutProps) {
+export default function AboutLayout({ children }: AboutLayoutProps) {
     return (
-        <div className="flex items-center justify-center h-screen ">
-            {children}
-        </div>
+        <>
+            <div className="container min-h-screen pt-[5rem]">
+                {children}
+            </div>
+        </>
     )
 }
