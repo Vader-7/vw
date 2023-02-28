@@ -1,11 +1,12 @@
+'use client'
+
+import { Canvas } from '@/components/Gradient/Canvas'
 import { faArrowRightLong, faEye } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
-import Head from 'next/head'
 import Link from 'next/link'
-import React, { useCallback, useEffect, useState } from 'react'
+import React from 'react'
 
-import { Gradient } from '../public/Gradient'
 
 const variant = {
   hidden: {
@@ -36,19 +37,8 @@ const item = {
 }
 
 export default function Home() {
-  const [isButtonClicked, setIsButtonClicked] = useState(false)
-  const gradient = new Gradient()
+  const [isButtonClicked, setIsButtonClicked] = React.useState(false)
 
-  const initGradient = useCallback(() => {
-    gradient.initGradient('#gradient-canvas')
-  }, [])
-
-  useEffect(() => {
-    initGradient()
-  }, [initGradient])
-
-  const title = 'Tyler Miranda Hayashi'
-  const description = 'My Portfolio.'
 
   return (
     <>
@@ -61,22 +51,18 @@ export default function Home() {
         <div
           className={`h-64 w-64 lg:h-96 lg:w-1/2 ${isButtonClicked
             ? 'mt-10 scale-x-[1.7] scale-y-[2] transition-all duration-1000'
-            : 'transition-all duration-1000'
-            }
+            : 'transition-all duration-1000'}
             }`}
           onClick={() => setIsButtonClicked(false)}
         >
-          <canvas
-            id='gradient-canvas'
-            className='h-full w-full shadow-3xl drop-shadow-2xl'
-          />
+          <Canvas />
         </div>
         <motion.div
           className='align-center flex items-center gap-[5rem] pt-5 text-base font-bold'
           variants={item}
         >
           <Link
-            href='/content/home'
+            href='/pages/home'
             className='flex items-center justify-center gap-2 transition-colors duration-1000 hover:text-zinc-400'
           >
             GET INSIDE <FontAwesomeIcon size='sm' icon={faArrowRightLong} />
@@ -88,7 +74,7 @@ export default function Home() {
             <FontAwesomeIcon icon={faEye} />
           </button>
         </motion.div>
-      </motion.div>
+      </motion.div >
     </>
   )
 }
