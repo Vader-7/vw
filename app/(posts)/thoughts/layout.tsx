@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function ThoughtsLayout({ children }: ThoughtsLayoutProps) {
     return (
-        <div className="h-screen flex items-center justify-center ">
+        <div className="container pt-[3rem] pb-[3rem]">
             {children}
         </div>
     )

@@ -1,22 +1,24 @@
 import { BlogCard } from "@/components/BlogCard"
 import { getDatabase } from "@/lib/notion"
-import Link from "next/link"
 
 
 export const metadata = {
     title: 'Thoughts',
-    description: 'Some of the thoughts I have had.',
+    description: 'Some of the things I like to think about.',
 }
 
 
 export default async function ThoughtsPage() {
     const database = await getDatabase()
-    console.log(database.map((page) => page.slug))
     return (
-        <div className="text-5xl">
-            {database.map((page) => (
-                <BlogCard post={page} key={page.id} />
-            ))}
-        </div>
+        <>
+            <div className="grid grid-cols-1 gap-7 lg:grid-cols-2 2xl:gap-12 ">
+                {
+                    database.map((page) => (
+                        <BlogCard post={page} key={page.id} />
+                    ))
+                }
+            </div>
+        </>
     )
 }

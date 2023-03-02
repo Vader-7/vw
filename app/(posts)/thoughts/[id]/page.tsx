@@ -1,11 +1,9 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { Fragment } from 'react'
 
 import { getBlocks, getDatabase, getPage } from '@/lib//notion'
 import { cn } from '@/lib/utils'
-import { GetStaticPropsResult } from 'next'
 
 
 interface TextProps {
@@ -109,38 +107,38 @@ export const renderBlock = (block: any) => {
     case 'paragraph':
       return (
         <p className='text-sm leading-5 md:text-base md:leading-7 [&:not(:first-child)]:mt-6'>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </p>
       )
     case 'heading_1':
       return (
-        <h1 className='scroll-m-20 text-4xl font-medium tracking-tight drop-shadow-sm lg:text-5xl'>
-          <Text text={value.text} />
+        <h1 className='text-4xl font-medium tracking-tight drop-shadow-sm lg:text-5xl'>
+          <Text text={value.rich_text} />
         </h1>
       )
     case 'heading_2':
       return (
-        <h2 className='mt-10 scroll-m-20 border-b-[2px] border-zinc-800 pb-2 text-3xl font-semibold tracking-tight drop-shadow-sm transition-colors first:mt-0 dark:border-b-zinc-200'>
-          <Text text={value.text} />
+        <h2 className='mt-10 border-b-[2px] border-zinc-800 pb-2 text-3xl font-semibold tracking-tight drop-shadow-sm transition-colors first:mt-0 dark:border-b-zinc-200'>
+          <Text text={value.rich_text} />
         </h2>
       )
     case 'heading_3':
       return (
-        <h3 className='mt-8 scroll-m-20 text-2xl font-semibold tracking-tight drop-shadow-sm'>
-          <Text text={value.text} />
+        <h3 className='mt-8 text-2xl font-semibold tracking-tight drop-shadow-sm'>
+          <Text text={value.rich_text} />
         </h3>
       )
     case 'heading_4':
       return (
-        <h4 className='mt-8 scroll-m-20 text-xl font-semibold tracking-tight'>
-          <Text text={value.text} />
+        <h4 className='mt-8 text-xl font-semibold tracking-tight'>
+          <Text text={value.rich_text} />
         </h4>
       )
     case 'bulleted_list_item':
     case 'numbered_list_item':
       return (
         <li>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </li>
       )
     case 'table_of_contents':
@@ -159,20 +157,20 @@ export const renderBlock = (block: any) => {
     case 'LargeText':
       return (
         <div className='text-lg font-semibold text-slate-900 dark:text-slate-50'>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </div>
       )
     case 'SmallText':
       return (
         <div className='text-sm font-medium leading-none'>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </div>
       )
 
     case 'SubText':
       return (
         <div className='text-sm text-slate-500 dark:text-slate-400'>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </div>
       )
 
@@ -183,14 +181,14 @@ export const renderBlock = (block: any) => {
       return (
         <div>
           <input type='checkbox' checked={value.checked} readOnly />
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </div>
       )
     case 'toggle':
       return (
         <details>
           <summary>
-            <Text text={value?.text} />
+            <Text text={value?.rich_text} />
           </summary>
           {value?.children?.map((block: any) => renderBlock(block))}
         </details>
@@ -245,7 +243,7 @@ export const renderBlock = (block: any) => {
     case 'quote':
       return (
         <blockquote className='mt-6 border-l-2 border-slate-300 pl-6 italic text-slate-800 dark:border-slate-600 dark:text-slate-200'>
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
           <Text text={value.caption} />
         </blockquote>
       )
@@ -253,7 +251,7 @@ export const renderBlock = (block: any) => {
       return (
         <div>
           <Text text={value.icon} />
-          <Text text={value.text} />
+          <Text text={value.rich_text} />
         </div>
       )
     case 'divider':
@@ -287,27 +285,27 @@ export const renderBlock = (block: any) => {
 
 interface PageProps {
   params: {
-    id: any[]
+    id: string[]
   }
 }
 
+
 export async function generateStaticParams(): Promise<PageProps["params"][]> {
   const pages = await getDatabase()
-  console.log(pages.map((page) => page.id))
   const ids = pages.map((page) => page.id)
   return ids.map((id) => ({ id: id }))
 }
 
 
 export default async function PostPage({ params }: PageProps) {
-  const id = params.id
-  console.log(id)
+  const { id } = params
   const page = await getPage(id)
   const blocks = await getBlocks(page.id)
-  console.log(page)
   return (
-    <div className='prose dark:prose-dark'>
-      <h1 className='text-4xl font-bold'>xd</h1>
-    </div>
+    <article>
+      {blocks.map((block: any) => (
+        <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+      ))}
+    </article>
   )
 }
