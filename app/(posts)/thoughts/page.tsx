@@ -2,6 +2,11 @@ import { BlogCard } from "@/components/Thoughts/BlogCard"
 import { getDatabase } from "@/lib/notion"
 
 
+export const metadata = {
+    title: 'Thoughts',
+    description: 'Some of the things I like to think about',
+}
+
 export default async function ThoughtsPage() {
     const database = await getDatabase()
     return (

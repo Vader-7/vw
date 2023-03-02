@@ -1,22 +1,25 @@
+'use client'
+
 import { Footer } from "@/components/Footer"
 import { NavBar } from "@/components/Navbar"
+import { motion } from "framer-motion"
 
 interface AboutLayoutProps {
     children: React.ReactNode
-}
-
-export const metadata = {
-    title: 'About',
-    description: 'About me',
 }
 
 export default function AboutLayout({ children }: AboutLayoutProps) {
     return (
         <div className="container py-[3rem]">
             <NavBar />
-            <div className="py-[3rem]">
+            <motion.div className="py-[3rem]"
+                initial={{ opacity: 0.8 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0.8 }}
+                transition={{ duration: 1 }}
+            >
                 {children}
-            </div>
+            </motion.div>
             <Footer />
         </div>
     )

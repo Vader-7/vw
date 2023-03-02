@@ -1,21 +1,26 @@
+'use client'
+
 import { Footer } from "@/components/Footer"
 import { NavBar } from "@/components/Navbar"
+import { motion } from "framer-motion"
 
 interface ThoughtsLayoutProps {
     children: React.ReactNode
 }
-export const metadata = {
-    title: 'Thoughts',
-    description: 'Some of the things I like to think about',
-}
+
 
 export default function ThoughtsLayout({ children }: ThoughtsLayoutProps) {
     return (
         <div className="container py-[3rem]">
             <NavBar />
-            <div className="py-[3rem]">
+            <motion.div className="py-[3rem]"
+                initial={{ opacity: 0.8 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0.8 }}
+                transition={{ duration: 1 }}
+            >
                 {children}
-            </div>
+            </motion.div>
             <Footer />
         </div>
     )

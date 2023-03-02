@@ -22,6 +22,9 @@ module.exports = {
     extend: {
       fontFamily: {
         inter: ['var(--font-inter)'],
+        jetbrains: ['var(--font-jetbrains-mono)'],
+        ibmMono: ['var(--font-ibm-plex-mono)'],
+        ibmSans: ['var(--font-ibm-plex-sans)'],
       },
     },
   },
