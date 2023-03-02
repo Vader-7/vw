@@ -1,13 +1,21 @@
-import { Post } from "@/lib/interfaces"
-import { getAllPosts } from "@/lib/notion"
+import { BlogCard } from "@/components/BlogCard"
+import { getDatabase } from "@/lib/notion"
+import Link from "next/link"
+
+
+export const metadata = {
+    title: 'Thoughts',
+    description: 'Some of the thoughts I have had.',
+}
 
 
 export default async function ThoughtsPage() {
-    let posts = await getAllPosts()
+    const database = await getDatabase()
+    console.log(database.map((page) => page.slug))
     return (
         <div className="text-5xl">
-            {posts.map((post: any) => (
-                <div key={post.id}>{post.title}</div>
+            {database.map((page) => (
+                <BlogCard post={page} key={page.id} />
             ))}
         </div>
     )
