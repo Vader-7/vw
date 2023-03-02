@@ -2,15 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { Fragment } from "react";
 
-import { getBlocks, getDatabase, getPage } from "@/lib//notion";
+import { getBlocks, getDatabase, getPage } from "@/lib/notion";
 import { cn } from "@/lib/utils";
-import { ArticlesHeader } from "@/components/Thoughts/ArticlesHeader";
+import { ArticlesHeader } from "@/components/articles/ArticlesHeader";
+import { Metadata } from "next";
 
 interface TextProps {
   text: any;
 }
 
-export const Text: React.FC<TextProps> = ({ text }) => {
+const Text: React.FC<TextProps> = ({ text }) => {
   if (!text) {
     return null;
   }
@@ -73,7 +74,7 @@ export const Text: React.FC<TextProps> = ({ text }) => {
   );
 };
 
-export const renderNestedList = (block: any) => {
+const renderNestedList = (block: any) => {
   const { type } = block;
   const value = block[type];
   if (!value) {
@@ -96,7 +97,7 @@ export const renderNestedList = (block: any) => {
   );
 };
 
-export const renderBlock = (block: any) => {
+const renderBlock = (block: any) => {
   const { type } = block;
   const value = block[type];
   if (!value) {
@@ -286,6 +287,16 @@ export const renderBlock = (block: any) => {
 interface PageProps {
   params: {
     id: string[];
+  };
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const data = await getDatabase();
+  const page = data.find((page) => page.id === params.id);
+  return {
+    title: page.title,
   };
 }
 

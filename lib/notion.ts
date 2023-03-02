@@ -8,7 +8,6 @@ const notion = new Client({
 export const getDatabase = async () => {
   const posts: QueryDatabaseResponse = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID,
-    //https://ymtdzzz.dev/post/use-notion-as-cms/
     page_size: 100,
     filter: {
       property: "Published",
@@ -32,7 +31,6 @@ export const getDatabase = async () => {
 
       return allTags;
     };
-    //check cover image
     return {
       id: post.id,
       title: post.properties.Name.title[0].plain_text,
@@ -71,11 +69,6 @@ export const getBlocks = async (blockId: any) => {
     cursor = next_cursor
   }
   return blocks
-}
-
-//get id from child_page property
-export const getBlockId = (block: any) => {
-  return block?.value?.id
 }
 
 

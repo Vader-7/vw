@@ -1,4 +1,4 @@
-import { BlogCard } from "@/components/Thoughts/BlogCard";
+import { BlogCard } from "@/components/articles/BlogCard";
 import { getDatabase } from "@/lib/notion";
 
 export const metadata = {
