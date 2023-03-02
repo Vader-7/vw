@@ -1,7 +1,7 @@
 'use client'
 
-import { Canvas } from '@/components/Gradient/Canvas'
-import { faArrowRightLong, faEye } from '@fortawesome/free-solid-svg-icons'
+import { Canvas } from '@/components/Canvas'
+import { faEye } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -65,7 +65,7 @@ export default function Home() {
             href='/about'
             className='flex items-center justify-center gap-2 transition-colors duration-1000 hover:text-zinc-400'
           >
-            GET INSIDE <FontAwesomeIcon size='sm' icon={faArrowRightLong} />
+            GET INSIDE &rarr;
           </Link>
           <button
             className='hidden lg:block'

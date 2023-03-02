@@ -1,5 +1,5 @@
 'use client'
-import { Gradient } from '@/components/Gradient/Gradient'
+import { Gradient } from './Gradient'
 import { useCallback, useEffect } from 'react'
 
 export const Canvas = () => {

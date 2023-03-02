@@ -4,6 +4,7 @@ import React, { Fragment } from 'react'
 
 import { getBlocks, getDatabase, getPage } from '@/lib//notion'
 import { cn } from '@/lib/utils'
+import { ArticlesHeader } from '@/components/Thoughts/ArticlesHeader'
 
 
 interface TextProps {
@@ -296,16 +297,17 @@ export async function generateStaticParams(): Promise<PageProps["params"][]> {
   return ids.map((id) => ({ id: id }))
 }
 
-
 export default async function PostPage({ params }: PageProps) {
   const { id } = params
   const page = await getPage(id)
   const blocks = await getBlocks(page.id)
   return (
-    <article>
-      {blocks.map((block: any) => (
-        <Fragment key={block.id}>{renderBlock(block)}</Fragment>
-      ))}
-    </article>
+    <>
+      <ArticlesHeader page={page} /><article>
+        {blocks.map((block: any) => (
+          <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+        ))}
+      </article>
+    </>
   )
 }
