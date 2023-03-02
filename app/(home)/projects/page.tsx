@@ -2,7 +2,6 @@ import { Separator } from "@/components/ui/separator";
 
 export const metadata = {
   title: "Projects",
-  description: "Some of the projects I have worked on",
 };
 
 export default function ProjectsPage() {
