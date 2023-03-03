@@ -1,9 +1,16 @@
+'use client'
+
+import { CC } from "@/components/CC";
+import { Footer } from "@/components/Footer";
+import { NavBar } from "@/components/Navbar";
 import "@/styles/globals.css";
+import { AnimatePresence, motion } from "framer-motion";
 import { Inter } from "next/font/google";
 import { IBM_Plex_Sans } from "next/font/google";
 import { IBM_Plex_Mono } from "next/font/google";
 import { JetBrains_Mono } from "next/font/google";
 import { Fira_Code } from "next/font/google";
+import { usePathname } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const ibmPlexSans = IBM_Plex_Sans({
@@ -27,22 +34,63 @@ const firaCode = Fira_Code({
   variable: "--font-fira-code",
 });
 
-export const metadata = {
-  title: "Tyler Miranda Hayashi",
-  description: "Works by me.",
+const variant = {
+  hidden: {
+    y: -30,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+      Animation: "spring",
+    },
+  },
 };
+
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
   return (
     <html lang="en">
       <body
         className={`${ibmPlexSans.className} min-h-screen min-w-full bg-[#efefef] text-black antialiased dark:bg-[#0e0e0e] dark:text-white`}
       >
-        {children}
+        {
+          pathname !== "/" ? (
+            <div className="container py-[3rem]">
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={variant}
+              >
+                <NavBar />
+              </motion.div>
+              <motion.div
+                className="py-[2rem]"
+                initial={{ opacity: 0.2, y: 25 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0.8, y: -25 }}
+                transition={{ duration: 0.5, ease: "easeInOut", Animation: "spring" }}
+                key={pathname}
+              >
+                {children}
+              </motion.div>
+              <Footer />
+              <CC />
+            </div>
+          ) : (
+            <>
+              {children}
+            </>
+          )
+        }
       </body>
     </html>
   );

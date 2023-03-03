@@ -11,11 +11,11 @@ export const BlogCard: FunctionComponent<{ post: any }> = ({ post }) => {
     <Link href={`/thoughts/${post.id}`} passHref>
       <div
         key={post.id}
-        className="flex-col shadow-lg transition duration-700 hover:shadow-2xl"
+        className="flex-col shadow-lg"
       >
-        <div className="shrink drop-shadow-sm transition duration-1000 hover:opacity-90">
+        <div className="shrink drop-shadow-sm overflow-hidden">
           <Image
-            className="max-h-fit min-w-full object-cover object-center"
+            className="object-cover object-center hover:scale-110 transition-all duration-1000"
             src={post.cover}
             alt={post.title}
             width={500}
