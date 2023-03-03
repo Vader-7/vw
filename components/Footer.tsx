@@ -11,7 +11,7 @@ export function Footer() {
         </p>
       </div>
       <Separator className="my-2" />
-      <div className="flex h-4 items-center space-x-4 text-center text-sm font-medium subpixel-antialiased">
+      <div className="flex h-4 items-center space-x-4 text-center text-sm font-medium subpixel-antialiased px-2">
         <div>
           <a href="https://github.com/Vader-7" target="_blank">
             Github
@@ -29,11 +29,10 @@ export function Footer() {
             Twitter
           </a>
         </div>
-        <Separator orientation="vertical" />
         <Link
           href="/"
           passHref
-          className="flex items-center justify-center gap-1"
+          className="flex items-center justify-end gap-1 w-full"
         >
           outside &rarr;
         </Link>

@@ -20,6 +20,6 @@
     --blurBackground: rgb(255 255 255 / 95%);
     --headerBackground: rgb(253 253 252 / 80%);
     -webkit-tap-highlight-color: transparent;
-    text-rendering: optimizeLegibility
+    text-rendering: optimizeLegibility;
   }
 }

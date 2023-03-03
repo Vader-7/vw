@@ -1,13 +1,15 @@
-import { Client } from '@notionhq/client'
-import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints';
+import { Client } from "@notionhq/client";
+import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
 
 const notion = new Client({
   auth: process.env.NOTION_ACCESS_TOKEN,
-})
+});
 
 export const getDatabase = async () => {
   const posts: QueryDatabaseResponse = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID ? process.env.NOTION_DATABASE_ID : "",
+    database_id: process.env.NOTION_DATABASE_ID
+      ? process.env.NOTION_DATABASE_ID
+      : "",
     page_size: 100,
     filter: {
       property: "Published",
@@ -25,7 +27,7 @@ export const getDatabase = async () => {
 
   const getPageMetaData = (post: any) => {
     const getTags = (tags: any) => {
-      const allTags = tags.map((tag: { name: any; }) => {
+      const allTags = tags.map((tag: { name: any }) => {
         return tag.name;
       });
 
@@ -38,7 +40,7 @@ export const getDatabase = async () => {
       description: post.properties.Description.rich_text[0]?.plain_text || "",
       date: post.properties.Date.last_edited_time,
       slug: post.properties.Slug.formula.string,
-      cover: post.cover.external.url
+      cover: post.cover.external.url,
     };
   };
 
@@ -50,25 +52,23 @@ export const getDatabase = async () => {
 };
 
 export const getPage = async (pageId: any) => {
-  const response = await notion.pages.retrieve({ page_id: pageId })
-  return response
-}
+  const response = await notion.pages.retrieve({ page_id: pageId });
+  return response;
+};
 
 export const getBlocks = async (blockId: any) => {
-  const blocks = []
-  let cursor
+  const blocks = [];
+  let cursor;
   while (true) {
     const { results, next_cursor }: any = await notion.blocks.children.list({
       start_cursor: cursor,
       block_id: blockId,
-    })
-    blocks.push(...results)
+    });
+    blocks.push(...results);
     if (!next_cursor) {
-      break
+      break;
     }
-    cursor = next_cursor
+    cursor = next_cursor;
   }
-  return blocks
-}
-
-
+  return blocks;
+};

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { CC } from "@/components/CC";
 import { Footer } from "@/components/Footer";
@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { Inter } from "next/font/google";
 import { usePathname } from "next/navigation";
 
-const inter = Inter({ subsets: ['latin'], variable: "--font-inter" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 const variant = {
   hidden: {
@@ -39,35 +39,31 @@ export default function RootLayout({
         className={`${inter.className}
            min-h-screen min-w-full bg-[#efefef] text-black antialiased dark:bg-[#0e0e0e] dark:text-white`}
       >
-        {
-          pathname !== "/" ? (
-            <div className="container py-[3rem]">
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={variant}
-              >
-                <NavBar />
-              </motion.div>
-              <motion.div
-                className="py-[2rem]"
-                initial={{ opacity: 0.5, y: 3 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0.5, y: -3 }}
-                transition={{ duration: 0.5, ease: "easeInOut", Animation: "spring" }}
-                key={pathname}
-              >
-                {children}
-              </motion.div>
-              <Footer />
-              <CC />
-            </div>
-          ) : (
-            <>
+        {pathname !== "/" ? (
+          <div className="container py-[3rem]">
+            <motion.div initial="hidden" animate="visible" variants={variant}>
+              <NavBar />
+            </motion.div>
+            <motion.div
+              className="py-[2rem]"
+              initial={{ opacity: 0.5, filter: "blur(2px)", y: -5 }}
+              animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+              exit={{ opacity: 0.5, filter: "blur(1px)", y: -5 }}
+              transition={{
+                duration: 0.5,
+                ease: "easeInOut",
+                Animation: "spring",
+              }}
+              key={pathname}
+            >
               {children}
-            </>
-          )
-        }
+            </motion.div>
+            <Footer />
+            <CC />
+          </div>
+        ) : (
+          <>{children}</>
+        )}
       </body>
     </html>
   );

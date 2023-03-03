@@ -9,13 +9,10 @@ export const BlogCard: FunctionComponent<{ post: any }> = ({ post }) => {
   dayjs.extend(localizedFormat);
   return (
     <Link href={`/thoughts/${post.id}`} passHref>
-      <div
-        key={post.id}
-        className="flex-col shadow-lg"
-      >
+      <div key={post.id} className="flex-col shadow-lg">
         <div className="shrink drop-shadow-sm overflow-hidden">
           <Image
-            className="object-cover object-center hover:scale-105 transition duration-3000"
+            className="w-full h-auto object-cover object-center hover:scale-105 transition duration-3000"
             src={post.cover}
             alt={post.title}
             width={500}
