@@ -12,14 +12,14 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 const variant = {
   hidden: {
-    y: -30,
+    y: -15,
     opacity: 0,
   },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 1.5,
       delay: 0.2,
       ease: "easeInOut",
       Animation: "spring",
@@ -29,14 +29,14 @@ const variant = {
 
 const variantx = {
   hidden: {
-    y: 30,
+    y: 15,
     opacity: 0,
   },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 1.5,
       delay: 0.2,
       ease: "easeInOut",
       Animation: "spring",
