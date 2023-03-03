@@ -62,7 +62,7 @@ export default function RootLayout({
               <NavBar />
             </motion.div>
             <motion.div
-              className="py-[2rem] lg:py-[5rem]"
+              className="py-[2rem] lg:py-[2.7rem]"
               initial="pageInitial"
               animate="pageAnimate"
               variants={{
