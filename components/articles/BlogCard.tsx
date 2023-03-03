@@ -12,7 +12,7 @@ export const BlogCard: FunctionComponent<{ post: any }> = ({ post }) => {
       <div key={post.id} className="flex-col shadow-lg">
         <div className="shrink drop-shadow-sm overflow-hidden">
           <Image
-            className="w-full h-auto object-cover object-center hover:scale-105 transition duration-3000 hover:blur-[1px]"
+            className="w-full h-auto object-cover object-center hover:scale-105 transition duration-3000 hover:blur-[0.5px]"
             src={post.cover}
             alt={post.title}
             width={500}
