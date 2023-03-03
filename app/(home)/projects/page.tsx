@@ -19,7 +19,7 @@ export default function ProjectsPage() {
           <div className="flex flex-col space-y-2">
             <h2 className="text-xl font-semibold leading-none">
               <a
-                href="https://github.com/Vader-7/vader7w"
+                href="https://github.com/Vader-7/vw"
                 className=" transition duration-700 ease-in-out hover:text-zinc-400"
               >
                 Portfolio
