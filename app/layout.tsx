@@ -66,8 +66,8 @@ export default function RootLayout({
               initial="pageInitial"
               animate="pageAnimate"
               variants={{
-                pageInitial: { opacity: 0.5 },
-                pageAnimate: { opacity: 1 },
+                pageInitial: { opacity: 0.8, filter: "blur(5px)" },
+                pageAnimate: { opacity: 1, filter: "blur(0px)" },
               }}
               transition={{ duration: 0.5 }}
               key={pathname}
