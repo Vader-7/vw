@@ -51,10 +51,10 @@ export default function RootLayout({
               </motion.div>
               <motion.div
                 className="py-[2rem]"
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0.8, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 1, ease: "easeInOut", Animation: "spring" }}
+                exit={{ opacity: 0.8, y: -5 }}
+                transition={{ duration: 0.5, ease: "easeInOut", Animation: "spring" }}
                 key={pathname}
               >
                 {children}
