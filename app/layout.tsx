@@ -40,13 +40,13 @@ export default function RootLayout({
            min-h-screen min-w-full bg-[#efefef] text-black antialiased dark:bg-[#0e0e0e] dark:text-white`}
       >
         {pathname !== "/" ? (
-          <div className="container py-[3rem]">
+          <div className="container py-[3rem] lg:py[5rem]">
             <motion.div initial="hidden" animate="visible" variants={variant}>
               <NavBar />
             </motion.div>
             <motion.div
-              className="py-[2rem]"
-              initial={{ opacity: 0.5, filter: "blur(2px)", y: -5 }}
+              className="py-[2rem] lg:py-[3rem]"
+              initial={{ opacity: 0.5, filter: "blur(1px)", y: -5 }}
               animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
               exit={{ opacity: 0.5, filter: "blur(1px)", y: -5 }}
               transition={{
