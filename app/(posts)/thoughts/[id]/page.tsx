@@ -52,7 +52,7 @@ const Text: React.FC<TextProps> = ({ text }) => {
                 italic && "italic",
                 underline && "underline",
                 strikethrough && "line-through",
-                code && "font-jetbrains",
+                code && "font-ibmMono",
                 color && `text-${color}`
               )}
             >
@@ -178,7 +178,7 @@ const renderBlock = (block: any) => {
 
     case "code":
       return (
-        <pre className="bg-zinc-300 dark:bg-zinc-800 p-4 shadow-lg drop-shadow-lg">
+        <pre className="bg-zinc-300 dark:bg-zinc-800 p-4 shadow-lg text-sm drop-shadow-lg">
           <code className="text-black dark:text-white">
             <Text text={value.rich_text} />
           </code>
