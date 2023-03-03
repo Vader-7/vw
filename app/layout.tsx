@@ -57,7 +57,7 @@ export default function RootLayout({
            min-h-screen min-w-full bg-[#efefef] text-black antialiased dark:bg-[#0e0e0e] dark:text-white`}
       >
         {pathname !== "/" ? (
-          <div className="container py-[2rem] lg:py-[3rem]">
+          <div className="container py-[2rem] lg:py-[3.5rem] 2xl:py-[5rem]">
             <motion.div initial="hidden" animate="visible" variants={variant}>
               <NavBar />
             </motion.div>
@@ -66,7 +66,7 @@ export default function RootLayout({
               initial="pageInitial"
               animate="pageAnimate"
               variants={{
-                pageInitial: { opacity: 0 },
+                pageInitial: { opacity: 0.5 },
                 pageAnimate: { opacity: 1 },
               }}
               transition={{ duration: 0.5 }}
