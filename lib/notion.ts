@@ -7,7 +7,7 @@ const notion = new Client({
 
 export const getDatabase = async () => {
   const posts: QueryDatabaseResponse = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID,
+    database_id: process.env.NOTION_DATABASE_ID ? process.env.NOTION_DATABASE_ID : "",
     page_size: 100,
     filter: {
       property: "Published",
@@ -23,8 +23,8 @@ export const getDatabase = async () => {
     ],
   });
 
-  const getPageMetaData = (post) => {
-    const getTags = (tags) => {
+  const getPageMetaData = (post: any) => {
+    const getTags = (tags: any) => {
       const allTags = tags.map((tag: { name: any; }) => {
         return tag.name;
       });
