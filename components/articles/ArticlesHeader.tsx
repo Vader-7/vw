@@ -1,25 +1,25 @@
-"use client";
+"use client"
 
-import dayjs from "dayjs";
-import React, { FunctionComponent, useEffect, useState } from "react";
-import { IoSparklesSharp } from "react-icons/io5";
+import React, { FunctionComponent, useEffect, useState } from "react"
+import dayjs from "dayjs"
+import { IoSparklesSharp } from "react-icons/io5"
 
-const localizedFormat = require("dayjs/plugin/localizedFormat");
+const localizedFormat = require("dayjs/plugin/localizedFormat")
 
 export const ArticlesHeader: FunctionComponent<{ page: any }> = ({ page }) => {
   const [author, setAuthor] = useState<any>(
     page.properties.Author.people[0]?.name.split(" ")[0]
-  );
-  dayjs.extend(localizedFormat);
+  )
+  dayjs.extend(localizedFormat)
 
-  const icon = <IoSparklesSharp className="text-black dark:text-white" />;
+  const icon = <IoSparklesSharp className="text-black dark:text-white" />
   useEffect(() => {
     if (author === undefined || author === null) {
-      setAuthor(<>Notion&nbsp;{icon}</>);
+      setAuthor(<>Notion&nbsp;{icon}</>)
     } else {
-      setAuthor(author);
+      setAuthor(author)
     }
-  }, [page.properties.Author.people]);
+  }, [page.properties.Author.people])
 
   return (
     <h4 className="text-base font-medium text-slate-900 dark:text-slate-50 pb-[1rem]">
@@ -29,5 +29,5 @@ export const ArticlesHeader: FunctionComponent<{ page: any }> = ({ page }) => {
         by&nbsp;{author}
       </span>
     </h4>
-  );
-};
+  )
+}

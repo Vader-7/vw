@@ -1,21 +1,23 @@
-"use client";
-import { Gradient } from "../assets/Gradient";
-import { useCallback, useEffect } from "react";
+"use client"
+
+import { useCallback, useEffect } from "react"
+
+import { Gradient } from "../assets/Gradient"
 
 export const Canvas = () => {
-  const gradient = new Gradient();
+  const gradient = new Gradient()
 
   const initGradient = useCallback(() => {
-    gradient.initGradient("#gradient-canvas");
-  }, []);
+    gradient.initGradient("#gradient-canvas")
+  }, [])
 
   useEffect(() => {
-    initGradient();
-  }, [initGradient]);
+    initGradient()
+  }, [initGradient])
   return (
     <canvas
       id="gradient-canvas"
       className="h-full w-full shadow-2xl drop-shadow-2xl"
     />
-  );
-};
+  )
+}

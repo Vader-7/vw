@@ -1,18 +1,18 @@
-import dayjs from "dayjs";
-import Image from "next/image";
-import Link from "next/link";
-import { FunctionComponent } from "react";
+import { FunctionComponent } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import dayjs from "dayjs"
 
-const localizedFormat = require("dayjs/plugin/localizedFormat");
+const localizedFormat = require("dayjs/plugin/localizedFormat")
 
 export const BlogCard: FunctionComponent<{ post: any }> = ({ post }) => {
-  dayjs.extend(localizedFormat);
+  dayjs.extend(localizedFormat)
   return (
     <Link href={`/thoughts/${post.id}`} passHref>
       <div key={post.id} className="flex-col shadow-lg">
         <div className="shrink drop-shadow-sm overflow-hidden">
           <Image
-            className="w-full h-auto object-cover object-center hover:scale-105 transition duration-3000"
+            className="w-full h-auto object-cover object-center hover:scale-105 transition duration-3000 hover:blur-[1px]"
             src={post.cover}
             alt={post.title}
             width={500}
@@ -36,5 +36,5 @@ export const BlogCard: FunctionComponent<{ post: any }> = ({ post }) => {
         </div>
       </div>
     </Link>
-  );
-};
+  )
+}

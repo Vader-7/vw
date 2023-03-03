@@ -1,6 +1,6 @@
-import Link from "next/link";
+import Link from "next/link"
 
-import { Separator } from "../components/ui/separator";
+import { Separator } from "../components/ui/separator"
 
 export function Footer() {
   return (
@@ -38,5 +38,5 @@ export function Footer() {
         </Link>
       </div>
     </div>
-  );
+  )
 }

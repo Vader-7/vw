@@ -1,8 +1,8 @@
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/components/ui/separator"
 
 export const metadata = {
   title: "Projects",
-};
+}
 
 export default function ProjectsPage() {
   return (
@@ -81,5 +81,5 @@ export default function ProjectsPage() {
         </div>
       </div>
     </>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import * as React from "react";
+import * as React from "react"
+import Link from "next/link"
 
 import {
   NavigationMenu,
@@ -9,8 +9,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from "../components/ui/navigation-menu";
-import { cn } from "../lib/utils";
+} from "../components/ui/navigation-menu"
+import { cn } from "../lib/utils"
 
 export function NavBar() {
   return (
@@ -39,7 +39,7 @@ export function NavBar() {
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
-  );
+  )
 }
 
 const ListItem = React.forwardRef<
@@ -64,6 +64,6 @@ const ListItem = React.forwardRef<
         </a>
       </NavigationMenuLink>
     </li>
-  );
-});
-ListItem.displayName = "ListItem";
+  )
+})
+ListItem.displayName = "ListItem"

@@ -1,11 +1,12 @@
-"use client";
+"use client"
 
-import { Canvas } from "@/components/Canvas";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import React from "react";
+import React from "react"
+import Link from "next/link"
+import { faEye } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { motion } from "framer-motion"
+
+import { Canvas } from "@/components/Canvas"
 
 const variant = {
   hidden: {
@@ -20,7 +21,7 @@ const variant = {
       Animation: "spring",
     },
   },
-};
+}
 
 const item = {
   hidden: {
@@ -36,10 +37,10 @@ const item = {
       Animation: "spring",
     },
   },
-};
+}
 
 export default function Home() {
-  const [isButtonClicked, setIsButtonClicked] = React.useState(false);
+  const [isButtonClicked, setIsButtonClicked] = React.useState(false)
 
   return (
     <>
@@ -79,5 +80,5 @@ export default function Home() {
         </motion.div>
       </motion.div>
     </>
-  );
+  )
 }
