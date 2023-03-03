@@ -4,7 +4,7 @@ import { Separator } from "../components/ui/separator";
 
 export function Footer() {
   return (
-    <div className="relative mx-auto min-w-fit font-ibmMono">
+    <div className="relative mx-auto min-w-fit">
       <div className="space-y-1">
         <p className="pt-5 text-xs font-medium text-black dark:text-white md:text-base">
           Feel free to reach out to me on any of the platforms below.

@@ -1,12 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export const CC = () => {
+  useEffect(() => {
+    fetch("/api/time")
+      .then((res) => res.json())
+      .then((data) => {
+        setDateState(new Date(data.time));
+      });
+  }, []);
+  useEffect(() => {
+    const tick = setInterval(() => {
+      setDateState(new Date());
+    }, 1000);
+    return () => clearInterval(tick);
+  }, []);
+
+
+  const [dateState, setDateState] = React.useState(new Date());
   return (
-    <div className="relative mb-[2rem] flex items-center justify-end gap-2 font-inter text-xs antialiased drop-shadow-sm py-8">
-      <abbr title="This site and all its content are licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.">
-        CC BY-NC 4.0
-      </abbr>
-      {` ${new Date().getFullYear()} © Tyler Miranda Hayashi.`}
+    <div className="relative flex items-center justify-center text-xs antialiased drop-shadow-sm font-medium py-[2rem] text-center">
+      {dateState && (
+        <span title="CC">
+          © Tyler Miranda Hayashi.
+          <br />
+          {dateState.toLocaleTimeString("en-US", {
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+            hour12: false,
+          })}
+        </span>
+      )}
     </div>
   );
 };
+
+

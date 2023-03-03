@@ -1,3 +1,4 @@
+const { fontFamily } = require("tailwindcss/defaultTheme")
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
@@ -16,6 +17,7 @@ module.exports = {
   theme: {
     container: {
       center: true,
+      fontFamily: 'ibmSans',
       padding: {
         DEFAULT: '2rem',
         sm: '7rem',
@@ -26,10 +28,12 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        inter: ['var(--font-inter)'],
-        jetbrains: ['var(--font-jetbrains-mono)'],
-        ibmMono: ['var(--font-ibm-plex-mono)'],
-        ibmSans: ['var(--font-ibm-plex-sans)'],
+        inter: ['var(--font-inter)', ...fontFamily.sans],
+      },
+      transitionDuration: {
+        '0': '0ms',
+        '2000': '2000ms',
+        '3000': '3000ms',
       },
       boxShadow: {
         '3xl': '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
