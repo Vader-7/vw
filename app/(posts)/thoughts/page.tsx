@@ -6,18 +6,11 @@ export const metadata = {
 }
 
 export default async function ThoughtsPage() {
-  const [staticData, dynamicData] = await Promise.all([
-    getDatabase(),
-    {
-      next: {
-        revalidate: 10,
-      }
-    },
-  ])
+  const database = await getDatabase()
 
   return (
     <div className="grid grid-cols-1 gap-7 lg:grid-cols-2 2xl:gap-12 ">
-      {staticData.map((page) => (
+      {database.map((page) => (
         <BlogCard post={page} key={page.id} />
       ))}
     </div>
