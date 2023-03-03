@@ -17,7 +17,6 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      fontFamily: 'ibmSans',
       padding: {
         DEFAULT: '2rem',
         sm: '7rem',
