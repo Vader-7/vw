@@ -5,14 +5,10 @@ import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/Navbar";
 import "@/styles/globals.css";
 import { motion } from "framer-motion";
-import { IBM_Plex_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import { usePathname } from "next/navigation";
 
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  variable: "--font-ibmSans",
-});
+const inter = Inter({ subsets: ['latin'], variable: "--font-inter" });
 
 const variant = {
   hidden: {
@@ -40,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ibmPlexSans.className}
+        className={`${inter.className}
            min-h-screen min-w-full bg-[#efefef] text-black antialiased dark:bg-[#0e0e0e] dark:text-white`}
       >
         {
@@ -55,10 +51,10 @@ export default function RootLayout({
               </motion.div>
               <motion.div
                 className="py-[2rem]"
-                initial={{ opacity: 0.8 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0.5 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 1, ease: "easeInOut", Animation: "spring" }}
                 key={pathname}
               >
                 {children}
