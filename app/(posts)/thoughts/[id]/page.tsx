@@ -52,7 +52,7 @@ const Text: React.FC<TextProps> = ({ text }) => {
                 italic && "italic",
                 underline && "underline",
                 strikethrough && "line-through",
-                code && "font-ibmMono",
+                code && "font-mono",
                 color && `text-${color}`
               )}
             >

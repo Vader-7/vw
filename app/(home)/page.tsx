@@ -60,7 +60,7 @@ export default function Home() {
           <Canvas />
         </div>
         <motion.div
-          className="align-center flex items-center gap-[5rem] pt-5 text-base font-bold"
+          className="align-center flex items-center gap-[5rem] pt-5 text-base font-semibold"
           variants={item}
         >
           <Link

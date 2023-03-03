@@ -28,7 +28,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        inter: ['var(--font-inter)', ...fontFamily.sans],
+        ibm: ['var(--font-ibmSans)', ...fontFamily.sans],
       },
       transitionDuration: {
         '0': '0ms',
