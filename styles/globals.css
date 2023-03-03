@@ -3,16 +3,23 @@
 @tailwind utilities;
 
 @layer base {
-    #gradient-canvas {
-        --gradient-color-1: #93bded;
-        --gradient-color-2: #2e79c2;
-        --gradient-color-3: #c5c6e9;
-        --gradient-color-4: #106bbb;
-        /*
+  #gradient-canvas {
+    --gradient-color-1: #93bded;
+    --gradient-color-2: #2e79c2;
+    --gradient-color-3: #c5c6e9;
+    --gradient-color-4: #106bbb;
+    /*
       --gradient-color-1: #07599c; 
       --gradient-color-2: #0673b1; 
       --gradient-color-3: #0056b3;  
       --gradient-color-4: #1f2361;
       */
-    }
+  }
+
+  :root {
+    --blurBackground: rgb(255 255 255 / 95%);
+    --headerBackground: rgb(253 253 252 / 80%);
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility
+  }
 }

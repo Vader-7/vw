@@ -6,6 +6,7 @@ import { getBlocks, getDatabase, getPage } from "@/lib/notion";
 import { cn } from "@/lib/utils";
 import { ArticlesHeader } from "@/components/articles/ArticlesHeader";
 import { Metadata } from "next";
+import { Separator } from "@/components/ui/separator";
 
 interface TextProps {
   text: any;
@@ -51,7 +52,7 @@ const Text: React.FC<TextProps> = ({ text }) => {
                 italic && "italic",
                 underline && "underline",
                 strikethrough && "line-through",
-                code && "font-mono",
+                code && "font-jetbrains",
                 color && `text-${color}`
               )}
             >
@@ -119,7 +120,7 @@ const renderBlock = (block: any) => {
       );
     case "heading_2":
       return (
-        <h2 className="mt-10 border-b-[2px] border-zinc-800 pb-2 text-3xl font-semibold tracking-tight drop-shadow-sm transition-colors first:mt-0 dark:border-b-zinc-200">
+        <h2 className="mt-10 scroll-m-20 border-b border-b-zinc-200 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 dark:border-b-zinc-700">
           <Text text={value.rich_text} />
         </h2>
       );
@@ -175,6 +176,14 @@ const renderBlock = (block: any) => {
         </div>
       );
 
+    case "code":
+      return (
+        <pre className="bg-zinc-300 dark:bg-zinc-800 p-4 shadow-xl drop-shadow-lg">
+          <code className="text-black dark:text-white">
+            <Text text={value.rich_text} />
+          </code>
+        </pre>
+      );
     case "bulleted_list":
     case "numbered_list":
       return renderNestedList(block);
@@ -256,7 +265,7 @@ const renderBlock = (block: any) => {
         </div>
       );
     case "divider":
-      return <hr />;
+      return <Separator />;
     case "bookmark":
       return (
         <div>
@@ -296,7 +305,7 @@ export async function generateMetadata({
   const data = await getDatabase();
   const page = data.find((page) => page.id === params.id);
   return {
-    title: page.title,
+    title: page?.title,
   };
 }
 

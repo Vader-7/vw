@@ -35,7 +35,7 @@ export function Footer() {
           passHref
           className="flex items-center justify-center gap-1"
         >
-          outside
+          outside &rarr;
         </Link>
       </div>
     </div>

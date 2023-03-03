@@ -10,7 +10,6 @@ export const BlogCard: FunctionComponent<{ post: any }> = ({ post }) => {
   return (
     <Link
       href={`/thoughts/${post.id}`}
-      className="duration-300 hover:scale-105"
       passHref
     >
       <div
