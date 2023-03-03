@@ -120,7 +120,7 @@ const renderBlock = (block: any) => {
       );
     case "heading_2":
       return (
-        <h2 className="mt-10 scroll-m-20 border-b border-b-zinc-200 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 dark:border-b-zinc-700">
+        <h2 className="mt-10 scroll-m-20 border-b border-b-zinc-300 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 dark:border-b-zinc-600">
           <Text text={value.rich_text} />
         </h2>
       );
