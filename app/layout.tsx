@@ -46,9 +46,9 @@ export default function RootLayout({
             </motion.div>
             <motion.div
               className="py-[2rem] lg:py-[3rem]"
-              initial={{ opacity: 0.5, filter: "blur(1px)", y: -5 }}
+              initial={{ opacity: 0.5, filter: "blur(1px)", y: -1 }}
               animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-              exit={{ opacity: 0.5, filter: "blur(1px)", y: -5 }}
+              exit={{ opacity: 0.5, filter: "blur(1px)", y: 1 }}
               transition={{
                 duration: 0.5,
                 ease: "easeInOut",
