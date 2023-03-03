@@ -4,13 +4,14 @@ import { CC } from "@/components/CC";
 import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/Navbar";
 import "@/styles/globals.css";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Inter } from "next/font/google";
 import { IBM_Plex_Sans } from "next/font/google";
 import { IBM_Plex_Mono } from "next/font/google";
 import { JetBrains_Mono } from "next/font/google";
 import { Fira_Code } from "next/font/google";
 import { usePathname } from "next/navigation";
+import { metadata } from "./(home)/about/page";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const ibmPlexSans = IBM_Plex_Sans({
@@ -44,12 +45,12 @@ const variant = {
     opacity: 1,
     transition: {
       duration: 1,
+      delay: 0.2,
       ease: "easeInOut",
       Animation: "spring",
     },
   },
 };
-
 
 export default function RootLayout({
   children,
@@ -74,10 +75,10 @@ export default function RootLayout({
               </motion.div>
               <motion.div
                 className="py-[2rem]"
-                initial={{ opacity: 0.2, y: 25 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0.8, y: -25 }}
-                transition={{ duration: 0.5, ease: "easeInOut", Animation: "spring" }}
+                initial={{ opacity: 0.8 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0.5 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
                 key={pathname}
               >
                 {children}
