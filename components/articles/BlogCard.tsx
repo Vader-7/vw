@@ -8,10 +8,7 @@ const localizedFormat = require("dayjs/plugin/localizedFormat");
 export const BlogCard: FunctionComponent<{ post: any }> = ({ post }) => {
   dayjs.extend(localizedFormat);
   return (
-    <Link
-      href={`/thoughts/${post.id}`}
-      passHref
-    >
+    <Link href={`/thoughts/${post.id}`} passHref>
       <div
         key={post.id}
         className="flex-col shadow-lg transition duration-700 hover:shadow-2xl"

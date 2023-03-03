@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { CC } from "@/components/CC";
 import { Footer } from "@/components/Footer";
@@ -13,7 +13,7 @@ export default function ThoughtsLayout({ children }: ThoughtsLayoutProps) {
   return (
     <div className="container py-[3rem]">
       <NavBar />
-      <AnimatePresence mode='popLayout' >
+      <AnimatePresence mode="popLayout">
         <motion.div
           className="py-[2rem]"
           initial={{ opacity: 0.2 }}

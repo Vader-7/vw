@@ -13,7 +13,7 @@ export default function AboutLayout({ children }: AboutLayoutProps) {
   return (
     <div className="container py-[3rem]">
       <NavBar />
-      <AnimatePresence mode='popLayout' >
+      <AnimatePresence mode="popLayout">
         <motion.div
           className="py-[2rem]"
           initial={{ opacity: 0.2 }}
