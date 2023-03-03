@@ -26,6 +26,10 @@ module.exports = {
         ibmMono: ['var(--font-ibm-plex-mono)'],
         ibmSans: ['var(--font-ibm-plex-sans)'],
       },
+      boxShadow: {
+        '3xl': '0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2)',
+        '3xl-dark': '0 8px 24px rgba(255, 255, 255, 0.9);',
+      },
     },
   },
   plugins: [],
