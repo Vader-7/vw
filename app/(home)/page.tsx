@@ -51,8 +51,8 @@ export default function Home() {
     >
       <div
         className={`h-64 w-64 lg:h-96 lg:w-1/2 ${isButtonClicked
-          ? "mt-10 scale-x-[1.7] scale-y-[2] transition-all duration-1000"
-          : "transition-all duration-1000"
+            ? "mt-10 scale-x-[1.7] scale-y-[2] transition-all duration-1000"
+            : "transition-all duration-1000"
           }
             }`}
         onClick={() => setIsButtonClicked(false)}
@@ -60,7 +60,7 @@ export default function Home() {
         <Canvas />
       </div>
       <motion.div
-        className="align-center flex items-center gap-[12rem] pt-5 text-base font-semibold"
+        className="align-center flex items-center gap-[7rem] pt-5 text-base font-semibold"
         variants={item}
       >
         <Link

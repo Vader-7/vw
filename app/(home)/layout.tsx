@@ -1,11 +1,11 @@
 export const metadata = {
-    title: "Ty's Portfolio",
+  title: "Ty's Portfolio",
 }
 
 interface HomeLayoutProps {
-    children?: React.ReactNode
+  children?: React.ReactNode
 }
 
 export default function HomeLayout({ children }: HomeLayoutProps) {
-    return <> {children} </>
+  return <> {children} </>
 }
