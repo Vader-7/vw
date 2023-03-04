@@ -15,8 +15,7 @@ const variant = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5,
-      duration: 1,
+      staggerChildren: 0.2,
     },
   },
 }
@@ -32,8 +31,7 @@ const item = {
     transform: "scale(1)",
     opacity: 1,
     transition: {
-      duration: 0.7,
-      ease: "easeInOut",
+      duration: 1,
       type: "spring",
       damping: 20,
       stiffness: 100,
