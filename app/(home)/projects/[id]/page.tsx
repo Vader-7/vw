@@ -1,6 +1,5 @@
 import { Fragment } from "react"
 import { Metadata } from "next"
-import { PageProps } from "@/.next/types/app/layout"
 
 import { getBlocks, getDatabase, getPage } from "@/lib/notion"
 import { ArticlesHeader } from "@/components/articles/ArticlesHeader"
@@ -14,7 +13,7 @@ interface ProjectProps {
 
 export async function generateMetadata({
   params,
-}: PageProps): Promise<Metadata> {
+}: ProjectProps): Promise<Metadata> {
   const data = await getDatabase()
   const page = data.find((page) => page.id === params.id)
   return {
