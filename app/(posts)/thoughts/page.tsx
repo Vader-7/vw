@@ -6,7 +6,7 @@ export const metadata = {
 }
 
 export default async function ThoughtsPage() {
-  const database = await getPostsByTag("Posts")
+  const database = await getPostsByTag("Thoughts")
 
   return (
     <div className="grid grid-cols-1 gap-7 lg:grid-cols-2 2xl:gap-12 ">
