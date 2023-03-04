@@ -6,10 +6,6 @@ interface ProjectsLayoutProps {
   children?: React.ReactNode
 }
 
-export default function AboutLayout({
-  children,
-}: {
-  children: ProjectsLayoutProps
-}) {
+export default function ProjectsLayout({ children }: ProjectsLayoutProps) {
   return <> {children} </>
 }
