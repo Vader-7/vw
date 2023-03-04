@@ -15,7 +15,7 @@ const variant = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.5,
       delay: 0.2,
     },
   },
@@ -33,7 +33,9 @@ const item = {
     opacity: 1,
     transition: {
       duration: 0.7,
-      ease: "easeInOut",
+      type: "spring",
+      stiffness: 100,
+      bounce: 1,
     },
   },
 }
@@ -48,17 +50,16 @@ export default function Home() {
       initial="hidden"
       animate="visible"
     >
-      <motion.div
+      <div
         className={`h-64 w-64 lg:h-96 lg:w-1/2 z-50 ${isButtonClicked
           ? "mt-10 scale-x-[1.7] scale-y-[2] transition-all duration-1000"
           : "transition-all duration-1000"
           }
             }`}
         onClick={() => setIsButtonClicked(false)}
-        variants={item}
       >
         <Canvas />
-      </motion.div>
+      </div>
       <motion.div
         className="align-center flex items-center gap-[7rem] pt-5 text-base font-semibold"
         variants={item}
