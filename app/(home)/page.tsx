@@ -10,14 +10,13 @@ import { Canvas } from "@/components/Canvas"
 
 const variant = {
   hidden: {
-    opacity: 0.5,
+    opacity: 0,
   },
   visible: {
     opacity: 1,
     transition: {
       staggerChildren: 0.5,
       duration: 1,
-      ease: "easeInOut",
     },
   },
 }
@@ -35,6 +34,9 @@ const item = {
     transition: {
       duration: 0.7,
       ease: "easeInOut",
+      type: "spring",
+      damping: 20,
+      stiffness: 100,
     },
   },
 }
