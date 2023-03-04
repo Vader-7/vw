@@ -9,17 +9,21 @@ import { motion } from "framer-motion"
 import { Canvas } from "@/components/Canvas"
 
 const variant = {
+  hidden: {
+    opacity: 0,
+  },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.3,
+      delayChildren: 0.2,
     },
   },
 }
 
 const item = {
   hidden: {
-    filter: "blur(3px)",
+    filter: "blur(1.7px)",
     transform: "scale(0.9)",
     opacity: 0,
   },
@@ -28,10 +32,8 @@ const item = {
     transform: "scale(1)",
     opacity: 1,
     transition: {
-      duration: 1,
-      type: "spring",
-      damping: 20,
-      stiffness: 100,
+      duration: 0.7,
+      ease: "easeInOut",
     },
   },
 }

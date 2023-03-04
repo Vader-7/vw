@@ -12,8 +12,10 @@ export const Canvas = () => {
   }, [])
 
   useEffect(() => {
-    initGradient()
-  }, [initGradient])
+    setTimeout(() => {
+      initGradient()
+    }, 200)
+  }, [])
   return (
     <canvas
       id="gradient-canvas"
