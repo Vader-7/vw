@@ -14,7 +14,7 @@ export const Canvas = () => {
   useEffect(() => {
     setTimeout(() => {
       initGradient()
-    }, 200)
+    }, 100)
   }, [])
   return (
     <canvas
