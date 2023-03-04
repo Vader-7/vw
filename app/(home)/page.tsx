@@ -18,16 +18,15 @@ const variant = {
       staggerChildren: 1,
       duration: 0.5,
       ease: "easeInOut",
-      delay: 0.2,
     },
   },
 }
 
 const item = {
   hidden: {
-    filter: "blur(1.7px)",
-    transform: "scale(0.9)",
-    opacity: 0,
+    filter: "blur(1px)",
+    transform: "scale(0.7)",
+    opacity: 0.5,
   },
   visible: {
     filter: "blur(0px)",
@@ -36,8 +35,7 @@ const item = {
     transition: {
       duration: 1,
       type: "spring",
-      stiffness: 100,
-      bounce: 1,
+      stiffness: 20,
     },
   },
 }
