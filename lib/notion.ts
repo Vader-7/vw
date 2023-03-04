@@ -77,9 +77,6 @@ export const getPostsByTag = async (tagName: string) => {
   if (!tagName) return []
 
   const allPosts = await getDatabase()
-  // console.log(allPosts.map((post) => post.tags.map((tag) => tag)));
-  // console.log(allPosts.map((post) => post.tags[0]).filter((tag) => tag)[0]);
-  //全ての記事から同じタグだけを抽出する
   return allPosts.filter((post) =>
     post.tags.find((tag: string) => tag === tagName)
   )
