@@ -88,7 +88,7 @@ export default function RootLayout({
     >
       <body
         className={cn(
-          "font-sfPro antialiased min-h-screen min-w-full",
+          "font-inter antialiased min-h-screen min-w-full",
           inter.className,
           neueMontreal.variable
         )}
@@ -103,7 +103,7 @@ export default function RootLayout({
               initial="pageInitial"
               animate="pageAnimate"
               variants={{
-                pageInitial: { opacity: 0.8 },
+                pageInitial: { opacity: 0.5 },
                 pageAnimate: { opacity: 1 },
               }}
               transition={{

@@ -25,7 +25,7 @@ const variant = {
 const item = {
   hidden: {
     filter: "blur(1px)",
-    transform: "scale(0.87)",
+    transform: "scale(0.9)",
     opacity: 0.5,
   },
   visible: {
@@ -35,8 +35,8 @@ const item = {
     transition: {
       duration: 1,
       type: "spring",
-      stiffness: 30,
-      bounce: 1,
+      stiffness: 20,
+      damping: 10,
     },
   },
 }

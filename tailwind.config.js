@@ -1,3 +1,4 @@
+const { fontFamily } = require("tailwindcss/defaultTheme")
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
@@ -26,8 +27,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        inter: ['var(--font-inter)'],
-        neueMontreal: ['var(--font-neue-montreal)'],
+        inter: ['var(--font-inter)', ...fontFamily.sans],
+        neueMontreal: ['var(--font-neue-montreal)', ...fontFamily.sans],
         sfPro: '"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu, Cantarell,"Open Sans","Helvetica Neue",sans-serif',
       },
       transitionDuration: {

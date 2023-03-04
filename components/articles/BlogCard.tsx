@@ -10,15 +10,17 @@ const localizedFormat = require("dayjs/plugin/localizedFormat")
 
 const staggerChildren = {
   hidden: {
-    x: 10,
+    transform: "scale(0.9)",
     opacity: 0,
   },
   visible: {
-    x: 0,
+    transform: "scale(1)",
     opacity: 1,
     transition: {
       duration: 0.5,
       ease: "easeInOut",
+      type: "spring",
+      stiffness: 20,
     },
   },
 }
