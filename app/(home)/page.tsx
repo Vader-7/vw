@@ -9,9 +9,6 @@ import { motion } from "framer-motion"
 import { Canvas } from "@/components/Canvas"
 
 const variant = {
-  hidden: {
-    opacity: 0,
-  },
   visible: {
     opacity: 1,
     transition: {
