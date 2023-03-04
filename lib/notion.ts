@@ -33,6 +33,7 @@ export const getDatabase = async () => {
 
       return allTags
     }
+
     return {
       id: post.id,
       title: post.properties.Name.title[0].plain_text,
@@ -71,4 +72,15 @@ export const getBlocks = async (blockId: any) => {
     cursor = next_cursor
   }
   return blocks
+}
+export const getPostsByTag = async (tagName: string) => {
+  if (!tagName) return []
+
+  const allPosts = await getDatabase()
+  // console.log(allPosts.map((post) => post.tags.map((tag) => tag)));
+  // console.log(allPosts.map((post) => post.tags[0]).filter((tag) => tag)[0]);
+  //全ての記事から同じタグだけを抽出する
+  return allPosts.filter((post) =>
+    post.tags.find((tag: string) => tag === tagName)
+  )
 }

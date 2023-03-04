@@ -25,7 +25,7 @@ const staggerChildren = {
   },
 }
 
-export const BlogCard: FunctionComponent<{ post: any }> = ({ post }) => {
+export const PostCard: FunctionComponent<{ post: any }> = ({ post }) => {
   dayjs.extend(localizedFormat)
   return (
     <Link href={`/thoughts/${post.id}`} passHref>

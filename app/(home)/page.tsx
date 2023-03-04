@@ -52,10 +52,11 @@ export default function Home() {
       animate="visible"
     >
       <div
-        className={`h-64 w-64 lg:h-96 lg:w-1/2 z-50 ${isButtonClicked
-          ? "mt-10 scale-x-[1.7] scale-y-[2] transition-all duration-1000"
-          : "transition-all duration-1000"
-          }
+        className={`h-64 w-64 lg:h-96 lg:w-1/2 z-50 ${
+          isButtonClicked
+            ? "mt-10 scale-x-[1.7] scale-y-[2] transition-all duration-1000"
+            : "transition-all duration-1000"
+        }
             }`}
         onClick={() => setIsButtonClicked(false)}
       >
@@ -74,7 +75,8 @@ export default function Home() {
         <button
           className="hidden lg:block"
           onClick={() => setIsButtonClicked(true)}
-          id="see" aria-label="see"
+          id="see"
+          aria-label="see"
         >
           <FontAwesomeIcon icon={faEye} />
         </button>

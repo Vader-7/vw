@@ -1,9 +1,10 @@
 "use client"
 
 import React, { FunctionComponent, useEffect, useState } from "react"
+import Link from "next/link"
 import dayjs from "dayjs"
-import { IoSparklesSharp } from "react-icons/io5"
 import { motion } from "framer-motion"
+import { IoSparklesSharp } from "react-icons/io5"
 
 const localizedFormat = require("dayjs/plugin/localizedFormat")
 
@@ -39,13 +40,24 @@ export const ArticlesHeader: FunctionComponent<{ page: any }> = ({ page }) => {
 
   return (
     <motion.div variants={staggerChildren}>
-      <h4 className="text-base font-medium text-slate-900 dark:text-slate-50 pb-[1rem]">
-        {dayjs(page.last_edited_time).format("dddd D / MMM / YYYY")}
-        <br />
-        <span className="text-md flex items-center font-semibold">
-          by&nbsp;{author}
-        </span>
-      </h4>
+      <div className="pb-[1rem]">
+        <h4 className="text-base font-medium text-slate-900 dark:text-slate-50">
+          {dayjs(page.last_edited_time).format("dddd D / MMM / YYYY")}
+        </h4>
+        <div className="flex gap-[0.5rem] items-center px-1">
+          <span className="text-md flex w-full justify-start font-semibold">
+            By&nbsp;{author}
+          </span>
+          <Link
+            href={`/${page.properties.Tags.multi_select[0].name
+              .split(" ")[0]
+              .toLowerCase()}`}
+            className="text-md font-semibold flex w-full justify-end transition-colors duration-1000 hover:text-zinc-400"
+          >
+            {page.properties.Tags.multi_select[0].name.split(" ")[0]}
+          </Link>
+        </div>
+      </div>
     </motion.div>
   )
 }

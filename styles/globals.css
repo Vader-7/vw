@@ -16,9 +16,7 @@
       */
   }
 
-  html:root {
-    --blurBackground: rgb(255 255 255 / 95%);
-    --headerBackground: rgb(253 253 252 / 80%);
+  body:root {
     -webkit-tap-highlight-color: transparent;
     text-rendering: optimizeLegibility;
   }
