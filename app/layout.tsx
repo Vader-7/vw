@@ -55,7 +55,6 @@ const variant = {
       duration: 1.5,
       delay: 0.2,
       ease: "easeInOut",
-      Animation: "spring",
     },
   },
 }
@@ -72,7 +71,6 @@ const variantx = {
       duration: 1.5,
       delay: 0.2,
       ease: "easeInOut",
-      Animation: "spring",
     },
   },
 }
@@ -105,7 +103,7 @@ export default function RootLayout({
               initial="pageInitial"
               animate="pageAnimate"
               variants={{
-                pageInitial: { opacity: 0.5 },
+                pageInitial: { opacity: 0.8 },
                 pageAnimate: { opacity: 1 },
               }}
               transition={{

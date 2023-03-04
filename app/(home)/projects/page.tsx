@@ -1,22 +1,54 @@
+"use client"
+
+import { motion } from "framer-motion"
+
 import { Separator } from "@/components/ui/separator"
 
-export const metadata = {
-  title: "Projects",
+const stagger = {
+  hidden: {
+    opacity: 0.5,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+}
+
+const staggerChildren = {
+  hidden: {
+    x: -10,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
 }
 
 export default function ProjectsPage() {
   return (
-    <>
-      <h1 className="scroll-m-20 text-4xl font-medium tracking-tight drop-shadow-sm lg:text-5xl">
-        Projects
-      </h1>
-      <p className="py-1 text-sm font-medium leading-7 drop-shadow-sm md:text-base">
-        Here are some of the projects I&rsquo;ve worked on.
-      </p>
-      <Separator />
+    <motion.div initial="hidden" animate="visible" variants={stagger}>
+      <motion.div variants={staggerChildren}>
+        <h1 className="scroll-m-20 text-4xl font-medium tracking-tight drop-shadow-sm lg:text-5xl">
+          Projects
+        </h1>
+        <p className="py-1 text-sm font-medium leading-7 drop-shadow-sm md:text-base">
+          Here are some of the projects I&rsquo;ve worked on.
+        </p>
+        <Separator />
+      </motion.div>
       <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
         <div className="flex flex-col space-y-4">
-          <div className="flex flex-col space-y-2">
+          <motion.div
+            className="flex flex-col space-y-2"
+            variants={staggerChildren}
+          >
             <h2 className="text-xl font-semibold leading-none">
               <a
                 href="https://github.com/Vader-7/vw"
@@ -30,9 +62,12 @@ export default function ProjectsPage() {
               Tailwind CSS, Framer Motion and TypeScript connected to Notion as
               a CMS.
             </p>
-          </div>
+          </motion.div>
           <br />
-          <div className="flex flex-col space-y-2">
+          <motion.div
+            className="flex flex-col space-y-2"
+            variants={staggerChildren}
+          >
             <h2 className="text-xl font-semibold leading-none">
               <a
                 href={""}
@@ -46,9 +81,12 @@ export default function ProjectsPage() {
               A robot that can recognize and translate Chilean Sign Language. I
               built it using Python, TensorFlow and Arduino.
             </p>
-          </div>
+          </motion.div>
           <br />
-          <div className="flex flex-col space-y-2">
+          <motion.div
+            className="flex flex-col space-y-2"
+            variants={staggerChildren}
+          >
             <h2 className="text-xl font-semibold leading-none">
               <a
                 href={"https://github.com/Vader-7/RegistAPP"}
@@ -61,9 +99,12 @@ export default function ProjectsPage() {
               An attendance app for my University. I built it using Ionic,
               Firebase and Typescript.
             </p>
-          </div>
+          </motion.div>
           <br />
-          <div className="flex flex-col space-y-2">
+          <motion.div
+            className="flex flex-col space-y-2"
+            variants={staggerChildren}
+          >
             <h2 className="text-xl font-semibold leading-none">
               <a
                 href={"https://bazza.studio"}
@@ -77,9 +118,9 @@ export default function ProjectsPage() {
               CSS, Framer Motion, Supabase and TypeScript connected to Strapi
               API as a CMS.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </>
+    </motion.div>
   )
 }

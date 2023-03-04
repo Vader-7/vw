@@ -11,7 +11,7 @@ export function Footer() {
         </p>
       </div>
       <Separator className="my-2" />
-      <div className="flex h-4 items-center space-x-2 text-center text-sm font-medium subpixel-antialiased px-auto lg:px-2">
+      <div className="flex h-4 items-center space-x-2 text-center text-sm font-medium subpixel-antialiased px-auto lg:px-2 px-1">
         <div>
           <a href="https://github.com/Vader-7" target="_blank">
             Github

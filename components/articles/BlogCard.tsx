@@ -1,15 +1,37 @@
+"use client"
+
 import { FunctionComponent } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import dayjs from "dayjs"
+import { motion } from "framer-motion"
 
 const localizedFormat = require("dayjs/plugin/localizedFormat")
+
+const staggerChildren = {
+  hidden: {
+    x: 10,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+}
 
 export const BlogCard: FunctionComponent<{ post: any }> = ({ post }) => {
   dayjs.extend(localizedFormat)
   return (
     <Link href={`/thoughts/${post.id}`} passHref>
-      <div key={post.id} className="flex-col shadow-lg">
+      <motion.div
+        key={post.id}
+        className="flex-col shadow-lg"
+        variants={staggerChildren}
+      >
         <div className="shrink drop-shadow-sm overflow-hidden">
           <Image
             className="w-full h-auto object-cover object-center hover:scale-105 transition duration-3000 hover:blur-[0.5px]"
@@ -34,7 +56,7 @@ export const BlogCard: FunctionComponent<{ post: any }> = ({ post }) => {
             </span>
           </div>
         </div>
-      </div>
+      </motion.div>
     </Link>
   )
 }
