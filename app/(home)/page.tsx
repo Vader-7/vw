@@ -10,13 +10,13 @@ import { Canvas } from "@/components/Canvas"
 
 const variant = {
   hidden: {
-    opacity: 0,
+    opacity: 0.5,
   },
   visible: {
     opacity: 1,
     transition: {
       staggerChildren: 0.5,
-      duration: 0.2,
+      duration: 1,
       ease: "easeInOut",
     },
   },
