@@ -1,5 +1,6 @@
 export const metadata = {
   title: "Ty's Portfolio",
+  description: "Works of Ty",
 }
 
 interface HomeLayoutProps {
