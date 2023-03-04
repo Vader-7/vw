@@ -109,7 +109,6 @@ export default function RootLayout({
               transition={{
                 duration: 0.5,
                 ease: "easeInOut",
-                Animation: "spring",
               }}
               key={pathname}
             >
