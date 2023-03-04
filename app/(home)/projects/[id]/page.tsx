@@ -28,6 +28,7 @@ export async function generateStaticParams(): Promise<
   const ids = pages.map((page) => page.id)
   return ids.map((id) => ({ id: id }))
 }
+export const revalidate = 60
 
 export default async function ProjectPage({ params }: ProjectProps) {
   const { id } = params

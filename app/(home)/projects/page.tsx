@@ -4,6 +4,7 @@ import { ProjectCard } from "@/components/articles/ProjectCard"
 export const metadata = {
   title: "Projects",
 }
+export const revalidate = 60
 
 export default async function ProjectsPage() {
   const posts = await getPostsByTag("Projects")

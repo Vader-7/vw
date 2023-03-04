@@ -20,6 +20,7 @@ export async function generateMetadata({
     title: page?.title,
   }
 }
+export const revalidate = 60
 
 export async function generateStaticParams(): Promise<PageProps["params"][]> {
   const pages = await getDatabase()

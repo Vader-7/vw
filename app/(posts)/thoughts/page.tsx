@@ -5,6 +5,8 @@ export const metadata = {
   title: "Thoughts",
 }
 
+export const revalidate = 60
+
 export default async function ThoughtsPage() {
   const database = await getPostsByTag("Thoughts")
 
