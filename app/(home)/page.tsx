@@ -15,7 +15,9 @@ const variant = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 1,
+      duration: 0.5,
+      ease: "easeInOut",
       delay: 0.2,
     },
   },
@@ -32,7 +34,7 @@ const item = {
     transform: "scale(1)",
     opacity: 1,
     transition: {
-      duration: 0.7,
+      duration: 1,
       type: "spring",
       stiffness: 100,
       bounce: 1,
