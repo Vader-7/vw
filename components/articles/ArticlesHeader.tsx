@@ -53,7 +53,7 @@ export const ArticlesHeader: FunctionComponent<{ page: any }> = ({ page }) => {
             href={`/${page.properties.Tags.multi_select[0].name
               .split(" ")[0]
               .toLowerCase()}`}
-            className="text-md font-semibold flex w-full justify-end transition-colors duration-1000 hover:text-zinc-400 items-center gap-2"
+            className="text-md font-semibold flex w-full justify-end transition-colors duration-1000 hover:text-zinc-400 items-center gap-2 font-mono"
           >
             <ChevronLeft size={16} />{page.properties.Tags.multi_select[0].name.split(" ")[0]}
           </Link>

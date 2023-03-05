@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <div className="relative mx-auto min-w-fit">
       <div className="space-y-1">
-        <p className="pt-5 text-xs font-medium md:text-base">
+        <p className="pt-5 text-xs font-medium md:text-base font-mono">
           Feel free to reach out to me on any of the platforms below.
         </p>
       </div>
