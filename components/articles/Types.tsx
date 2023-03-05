@@ -182,7 +182,7 @@ export const renderBlock = (block: any) => {
       )
     case "link_preview":
       return (
-        <div className="flex w-full items-center justify-center py-[3rem]">
+        <div className="flex w-full items-center justify-center pt-[3rem]">
           <a
             href={value.url}
             target="_blank"
@@ -222,7 +222,7 @@ export const renderBlock = (block: any) => {
         value.type === "external" ? value.external.url : value.file.url
       const caption = value.caption ? value.caption[0].plain_text : ""
       return (
-        <figure className="py-5">
+        <figure className="pt-[3rem]">
           <div className="shadow-3xl drop-shadow-2xl">
             <Image
               src={src}
