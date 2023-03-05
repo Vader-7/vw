@@ -11,11 +11,11 @@ const localizedFormat = require("dayjs/plugin/localizedFormat")
 
 const staggerChildren = {
   hidden: {
-    x: -10,
+    y: -10,
     opacity: 0,
   },
   visible: {
-    x: 0,
+    y: 0,
     opacity: 1,
     transition: {
       duration: 0.5,
