@@ -47,7 +47,7 @@ export const ArticlesHeader: FunctionComponent<{ page: any }> = ({ page }) => {
         </h4>
         <div className="flex gap-[0.5rem] items-center lg:px-2 px-1">
           <span className="text-md flex w-full justify-start items-center font-semibold">
-            by&nbsp;{author}
+            {author}
           </span>
           <Link
             href={`/${page.properties.Tags.multi_select[0].name
