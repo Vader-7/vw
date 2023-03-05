@@ -172,7 +172,6 @@ export const renderBlock = (block: any) => {
           <Text text={value.rich_text} />
         </div>
       )
-
     case "code":
       return (
         <pre className="p-4 shadow-lg text-sm drop-shadow-lg backdrop-blur-xl bg-zinc-50 dark:bg-zinc-900">
@@ -183,7 +182,7 @@ export const renderBlock = (block: any) => {
       )
     case "link_preview":
       return (
-        <div className="flex w-full items-center justify-center py-8">
+        <div className="flex w-full items-center justify-center py-[3rem]">
           <a
             href={value.url}
             target="_blank"
