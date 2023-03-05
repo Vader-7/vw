@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <div className="relative mx-auto min-w-fit">
       <div className="space-y-1">
-        <p className="pt-5 text-xs font-medium md:text-base">
+        <p className="text-xs font-medium md:text-base">
           Feel free to reach out to me on any of the platforms below.
         </p>
       </div>
@@ -32,7 +32,7 @@ export function Footer() {
         <Link
           href="/"
           passHref
-          className="flex items-center justify-end gap-1 w-full transition-colors duration-700 hover:text-zinc-500 font-semibold"
+          className="flex items-center justify-end gap-1 w-full transition-colors duration-700 hover:text-zinc-500 font-medium font-mono"
         >
           outside
         </Link>

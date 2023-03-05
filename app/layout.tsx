@@ -63,12 +63,12 @@ export default function RootLayout({
         )}
       >
         {pathname !== "/" ? (
-          <div className="container py-[3.5rem] lg:py-[5rem]">
+          <div className="container py-[4.5rem] lg:py-[5.5rem]">
             <motion.div initial="hidden" animate="visible" variants={variant}>
               <NavBar />
             </motion.div>
             <motion.div
-              className="py-[2rem] lg:py-[2.5rem]"
+              className="py-[3.5rem] lg:py-[5.5rem]"
               initial="pageInitial"
               animate="pageAnimate"
               variants={{
