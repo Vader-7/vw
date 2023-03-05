@@ -2,44 +2,19 @@
 
 import { motion } from "framer-motion"
 
-const stagger = {
-  hidden: {
-    opacity: 0.5,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-}
-
-const staggerChildren = {
-  hidden: {
-    x: -10,
-    opacity: 0,
-  },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeInOut",
-    },
-  },
-}
+import { staggerChildrenP, staggerP } from "@/lib/framer"
 
 export default function AboutPage() {
   return (
-    <motion.div initial="hidden" animate="visible" variants={stagger}>
-      <motion.div variants={staggerChildren}>
+    <motion.div initial="hidden" animate="visible" variants={staggerP}>
+      <motion.div variants={staggerChildrenP}>
         <h1 className="scroll-m-20 text-4xl font-medium tracking-tight drop-shadow-sm lg:text-5xl">
           Hey there
         </h1>
       </motion.div>
       <br />
       <div className="text-sm leading-5 md:text-base md:leading-7">
-        <motion.div variants={staggerChildren}>
+        <motion.div variants={staggerChildrenP}>
           <p>
             I&rsquo;m Tyler, a developer and designer from Chile. I strive to
             continually improve my skills and knowledge, and enjoy contributing
@@ -55,7 +30,7 @@ export default function AboutPage() {
           </p>
         </motion.div>
         <br />
-        <motion.div variants={staggerChildren}>
+        <motion.div variants={staggerChildrenP}>
           <p>
             With experience as a developer and student since 2021, I have
             successfully completed and created several projects, including
@@ -65,7 +40,7 @@ export default function AboutPage() {
           </p>
         </motion.div>
         <br />
-        <motion.div variants={staggerChildren}>
+        <motion.div variants={staggerChildrenP}>
           <p>
             As a seasoned programmer analyst, I am eager to expand my skillset
             and seek challenging opportunities for growth and learning.

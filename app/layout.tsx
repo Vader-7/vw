@@ -9,6 +9,7 @@ import localFont from "next/font/local"
 import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 
+import { variant, variantx } from "@/lib/framer"
 import { cn } from "@/lib/utils"
 
 const inter = Inter({
@@ -42,38 +43,6 @@ const neueMontreal = localFont({
   variable: "--font-neue-montreal",
   display: "swap",
 })
-
-const variant = {
-  hidden: {
-    y: -15,
-    opacity: 0,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 1.5,
-      delay: 0.2,
-      ease: "easeInOut",
-    },
-  },
-}
-
-const variantx = {
-  hidden: {
-    y: 15,
-    opacity: 0,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 1.5,
-      delay: 0.2,
-      ease: "easeInOut",
-    },
-  },
-}
 
 export default function RootLayout({
   children,

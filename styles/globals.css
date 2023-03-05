@@ -16,7 +16,7 @@
       */
   }
 
-  body:root {
+  html * {
     -webkit-tap-highlight-color: transparent;
     text-rendering: optimizeLegibility;
   }

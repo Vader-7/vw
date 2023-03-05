@@ -6,33 +6,22 @@ import Link from "next/link"
 import dayjs from "dayjs"
 import { motion } from "framer-motion"
 
-const localizedFormat = require("dayjs/plugin/localizedFormat")
+import { staggerChildrenB } from "@/lib/framer"
 
-const staggerChildren = {
-  hidden: {
-    transform: "scale(0.9)",
-    opacity: 0,
-  },
-  visible: {
-    transform: "scale(1)",
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeInOut",
-      type: "spring",
-      stiffness: 20,
-    },
-  },
-}
+const localizedFormat = require("dayjs/plugin/localizedFormat")
 
 export const PostCard: FunctionComponent<{ post: any }> = ({ post }) => {
   dayjs.extend(localizedFormat)
   return (
-    <Link href={`/thoughts/${post.id}`} passHref>
+    <Link
+      href={`/thoughts/${post.id}`}
+      passHref
+      className="flex flex-col w-full h-full transition-colors duration-1000 hover:text-zinc-400"
+    >
       <motion.div
         key={post.id}
         className="flex-col shadow-lg"
-        variants={staggerChildren}
+        variants={staggerChildrenB}
       >
         <div className="shrink drop-shadow-sm overflow-hidden">
           <Image

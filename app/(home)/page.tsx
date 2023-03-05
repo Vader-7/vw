@@ -6,40 +6,8 @@ import { faEye } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { motion } from "framer-motion"
 
+import { staggerChildrenI, staggerI } from "@/lib/framer"
 import { Canvas } from "@/components/Canvas"
-
-const variant = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 1,
-      duration: 0.5,
-      ease: "easeInOut",
-    },
-  },
-}
-
-const item = {
-  hidden: {
-    filter: "blur(1px)",
-    transform: "scale(0.9)",
-    opacity: 0.5,
-  },
-  visible: {
-    filter: "blur(0px)",
-    transform: "scale(1)",
-    opacity: 1,
-    transition: {
-      duration: 1,
-      type: "spring",
-      stiffness: 20,
-      damping: 10,
-    },
-  },
-}
 
 export default function Home() {
   const [isButtonClicked, setIsButtonClicked] = React.useState(false)
@@ -47,7 +15,7 @@ export default function Home() {
   return (
     <motion.div
       className="flex h-screen flex-col items-center justify-center"
-      variants={variant}
+      variants={staggerI}
       initial="hidden"
       animate="visible"
     >
@@ -64,7 +32,7 @@ export default function Home() {
       </div>
       <motion.div
         className="align-center flex items-center gap-[7rem] pt-5 text-base font-semibold"
-        variants={item}
+        variants={staggerChildrenI}
       >
         <Link
           href="/about"
