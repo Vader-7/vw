@@ -4,8 +4,8 @@ import React, { FunctionComponent, useEffect, useState } from "react"
 import Link from "next/link"
 import dayjs from "dayjs"
 import { motion } from "framer-motion"
-import { IoSparklesSharp } from "react-icons/io5"
 import { ChevronLeft } from "lucide-react"
+import { IoSparklesSharp } from "react-icons/io5"
 
 const localizedFormat = require("dayjs/plugin/localizedFormat")
 
@@ -55,7 +55,8 @@ export const ArticlesHeader: FunctionComponent<{ page: any }> = ({ page }) => {
               .toLowerCase()}`}
             className="text-sm font-semibold flex w-full justify-end transition-colors duration-1000 hover:text-zinc-400 items-center gap-2 font-mono"
           >
-            <ChevronLeft size={16} />{page.properties.Tags.multi_select[0].name.split(" ")[0]}
+            <ChevronLeft size={16} />
+            {page.properties.Tags.multi_select[0].name.split(" ")[0]}
           </Link>
         </div>
       </div>

@@ -28,7 +28,6 @@ module.exports = {
     extend: {
       fontFamily: {
         inter: ['var(--font-inter)', ...fontFamily.sans],
-        neueMontreal: ['var(--font-neue-montreal)', ...fontFamily.sans],
         sfPro: '"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu, Cantarell,"Open Sans","Helvetica Neue",sans-serif',
         mono: '"SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", Menlo, monospace',
       },

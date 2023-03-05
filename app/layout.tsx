@@ -5,7 +5,6 @@ import { Footer } from "@/components/Footer"
 import { NavBar } from "@/components/Navbar"
 import "@/styles/globals.css"
 import { Inter } from "next/font/google"
-import localFont from "next/font/local"
 import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 
@@ -15,33 +14,6 @@ import { cn } from "@/lib/utils"
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-})
-
-const neueMontreal = localFont({
-  src: [
-    {
-      path: "../assets/fonts/PPNeueMontreal-Bold.otf",
-      weight: "800",
-      style: "bold",
-    },
-    {
-      path: "../assets/fonts/PPNeueMontreal-Book.otf",
-      weight: "400",
-      style: "base",
-    },
-    {
-      path: "../assets/fonts/PPNeueMontreal-Medium.otf",
-      weight: "500",
-      style: "medium",
-    },
-    {
-      path: "../assets/fonts/PPNeueMontreal-Thin.otf",
-      weight: "300",
-      style: "sm",
-    },
-  ],
-  variable: "--font-neue-montreal",
-  display: "swap",
 })
 
 export default function RootLayout({
@@ -58,8 +30,7 @@ export default function RootLayout({
       <body
         className={cn(
           "font-sfPro antialiased min-h-screen min-w-full",
-          inter.className,
-          neueMontreal.variable
+          inter.className
         )}
       >
         {pathname !== "/" ? (
