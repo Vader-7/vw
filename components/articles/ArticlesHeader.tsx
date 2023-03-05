@@ -46,7 +46,7 @@ export const ArticlesHeader: FunctionComponent<{ page: any }> = ({ page }) => {
           {dayjs(page.last_edited_time).format("dddd D / MMM / YYYY")}
         </h4>
         <div className="flex gap-[0.5rem] items-center px-1">
-          <span className="text-md flex w-full justify-start font-semibold">
+          <span className="text-md flex w-full justify-start items-center font-semibold">
             By&nbsp;{author}
           </span>
           <Link
