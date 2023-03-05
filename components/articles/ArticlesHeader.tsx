@@ -5,6 +5,7 @@ import Link from "next/link"
 import dayjs from "dayjs"
 import { motion } from "framer-motion"
 import { IoSparklesSharp } from "react-icons/io5"
+import { ChevronLeft } from "lucide-react"
 
 const localizedFormat = require("dayjs/plugin/localizedFormat")
 
@@ -52,9 +53,9 @@ export const ArticlesHeader: FunctionComponent<{ page: any }> = ({ page }) => {
             href={`/${page.properties.Tags.multi_select[0].name
               .split(" ")[0]
               .toLowerCase()}`}
-            className="text-md font-semibold flex w-full justify-end transition-colors duration-1000 hover:text-zinc-400"
+            className="text-md font-semibold flex w-full justify-end transition-colors duration-1000 hover:text-zinc-400 items-center gap-2"
           >
-            {page.properties.Tags.multi_select[0].name.split(" ")[0]} &rarr;
+            <ChevronLeft size={16} />{page.properties.Tags.multi_select[0].name.split(" ")[0]}
           </Link>
         </div>
       </div>
