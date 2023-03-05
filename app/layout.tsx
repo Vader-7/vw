@@ -72,7 +72,7 @@ export default function RootLayout({
               initial="pageInitial"
               animate="pageAnimate"
               variants={{
-                pageInitial: { opacity: 0.5 },
+                pageInitial: { opacity: 0.2 },
                 pageAnimate: { opacity: 1 },
               }}
               transition={{
