@@ -183,7 +183,7 @@ export const renderBlock = (block: any) => {
       )
     case "link_preview":
       return (
-        <div className="flex w-full items-center justify-start py-2">
+        <div className="flex w-full items-center justify-start py-5">
           <a
             href={value.url}
             target="_blank"
