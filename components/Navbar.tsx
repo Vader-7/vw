@@ -15,7 +15,7 @@ import { cn } from "../lib/utils"
 export function NavBar() {
   return (
     <NavigationMenu>
-      <NavigationMenuList className="gap-3">
+      <NavigationMenuList className="gap-3 backdrop-blur-sm">
         <NavigationMenuItem>
           <Link href="/about" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
