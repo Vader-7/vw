@@ -17,7 +17,7 @@ export const Canvas = () => {
   return (
     <canvas
       id="gradient-canvas"
-      className="h-full w-full shadow-2xl drop-shadow-2xl"
+      className="h-full shadow-2xl drop-shadow-2xl"
     />
   )
 }
