@@ -15,9 +15,7 @@ export const PostCard: FunctionComponent<{ post: any }> = ({ post }) => {
   return (
     <Link
       href={`/thoughts/${post.id}`}
-      passHref
-      className="flex flex-col w-full h-full transition-colors duration-1000 hover:text-zinc-400"
-    >
+      passHref>
       <motion.div
         key={post.id}
         className="flex-col shadow-lg"
