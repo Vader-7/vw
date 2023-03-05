@@ -35,9 +35,7 @@ export default function RootLayout({
       >
         {pathname !== "/" ? (
           <div className="container py-[4.5rem] lg:py-[5.5rem]">
-            <motion.div initial="hidden" animate="visible" variants={variant}
-              className="sticky top-2 left-0 z-50"
-            >
+            <motion.div initial="hidden" animate="visible" variants={variant}>
               <NavBar />
             </motion.div>
             <motion.div
