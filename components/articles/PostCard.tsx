@@ -25,7 +25,7 @@ export const PostCard: FunctionComponent<{ post: any }> = ({ post }) => {
       >
         <div className="shrink drop-shadow-sm overflow-hidden">
           <Image
-            className="w-full h-auto object-cover object-center hover:scale-105 transition duration-3000 hover:blur-[0.3rem]"
+            className="w-full h-auto object-cover object-center hover:scale-105 transition duration-2000"
             src={post.cover}
             alt={post.title}
             width={500}
