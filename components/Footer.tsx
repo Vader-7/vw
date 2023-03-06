@@ -32,7 +32,7 @@ export function Footer() {
         <Link
           href="/"
           passHref
-          className="flex items-center justify-end gap-1 w-full transition-colors duration-700 hover:text-zinc-500 font-medium font-mono"
+          className="flex items-center justify-end w-full transition-colors duration-700 hover:text-zinc-500 font-mono"
         >
           outside
         </Link>
