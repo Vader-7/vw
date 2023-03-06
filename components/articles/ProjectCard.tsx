@@ -27,7 +27,7 @@ export const ProjectCard: FunctionComponent<{ post: any }> = ({ post }) => {
               passHref
               className="transition-all duration-700 hover:text-zinc-500"
             >
-              <h3 className="font-mono text-sm font-semibold flex items-center justify-center">
+              <h3 className="font-jetBrains text-sm font-semibold flex items-center justify-center">
                 CASE STUDY <ChevronRight size={16} className="ml-2" />
               </h3>
             </Link>

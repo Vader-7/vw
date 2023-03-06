@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer"
 import { NavBar } from "@/components/Navbar"
 import "@/styles/globals.css"
 import { Inter } from "next/font/google"
+import { JetBrains_Mono } from "next/font/google"
 import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 
@@ -14,6 +15,11 @@ import { cn } from "@/lib/utils"
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+})
+
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
 })
 
 export default function RootLayout({
@@ -30,7 +36,8 @@ export default function RootLayout({
       <body
         className={cn(
           "font-sfPro antialiased min-h-screen min-w-full",
-          inter.className
+          inter.variable,
+          jetbrains.variable
         )}
       >
         {pathname !== "/" ? (

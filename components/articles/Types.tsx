@@ -49,7 +49,7 @@ export const Text: React.FC<TextProps> = ({ text }) => {
                 italic && "italic",
                 underline && "underline",
                 strikethrough && "line-through",
-                code && "font-mono",
+                code && "font-jetBrains",
                 color && `text-${color}`
               )}
             >
@@ -186,7 +186,7 @@ export const renderBlock = (block: any) => {
           <a
             href={value.url}
             target="_blank"
-            className="text-md font-bold font-mono transition-colors duration-1000 hover:text-zinc-400 flex gap-2"
+            className="text-md font-bold font-jetBrains transition-colors duration-1000 hover:text-zinc-400 flex gap-2"
           >
             GitHub <Github size={20} />
           </a>

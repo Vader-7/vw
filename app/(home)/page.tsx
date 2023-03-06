@@ -20,11 +20,10 @@ export default function Home() {
       animate="visible"
     >
       <div
-        className={`h-64 w-64 lg:h-96 lg:w-1/2 z-50 ${
-          isButtonClicked
+        className={`h-64 w-64 lg:h-96 lg:w-1/2 z-50 ${isButtonClicked
             ? "mt-10 scale-x-[1.7] scale-y-[2] transition-all duration-1000"
             : "transition-all duration-1000"
-        }
+          }
             }`}
         onClick={() => setIsButtonClicked(false)}
       >
@@ -36,7 +35,7 @@ export default function Home() {
       >
         <Link
           href="/about"
-          className="flex items-center justify-center gap-2 transition-colors duration-1000 hover:text-zinc-400 font-mono"
+          className="flex items-center justify-center gap-2 transition-colors duration-1000 hover:text-zinc-400 font-jetBrains"
         >
           GET INSIDE
         </Link>
