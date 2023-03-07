@@ -22,7 +22,7 @@ export default function AboutPage() {
               target="_blank"
               className="font-semibold transition-colors duration-700 ease-in-out hover:text-zinc-400"
               rel="noreferrer"
-            >Devaid.</a> and in my free time, I am building{" "}
+            >Devaid</a>, and in my free time, I am building{" "}
             <a
               href="http://bazza.studio"
               target="_blank"
