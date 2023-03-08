@@ -81,3 +81,8 @@ export const getPostsByTag = async (tagName: string) => {
     post.tags.find((tag: string) => tag === tagName)
   )
 }
+
+export const getSinglePost = async (slug: string) => {
+  const allPosts = await getDatabase()
+  return allPosts.find((post) => post.slug === slug)
+}

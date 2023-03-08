@@ -15,7 +15,7 @@ import { cn } from "../lib/utils"
 export function NavBar() {
   return (
     <NavigationMenu>
-      <NavigationMenuList className="gap-3">
+      < NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/about" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -37,8 +37,8 @@ export function NavBar() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+      </NavigationMenuList >
+    </NavigationMenu >
   )
 }
 
