@@ -108,7 +108,7 @@ export const staggerI = {
 
 export const staggerChildrenI = {
   hidden: {
-    filter: "blur(1px)",
+    filter: "blur(0.5px)",
     transform: "scale(0.9)",
     opacity: 0.5,
   },
