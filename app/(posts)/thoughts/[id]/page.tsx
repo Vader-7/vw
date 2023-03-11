@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import { Metadata } from "next"
+import Image from "next/image"
 
 import { getBlocks, getDatabase, getPage } from "@/lib/notion"
 import { ArticlesHeader } from "@/components/articles/ArticlesHeader"
@@ -32,12 +33,19 @@ export default async function PostPage({ params }: PageProps) {
   const { id } = params
   const page = await getPage(id)
   const blocks = await getBlocks(page.id)
+
   return (
     <>
       <ArticlesHeader page={page} />
       <article>
         {blocks.map((block: any) => (
-          <Fragment key={block.id}>{renderBlock(block)}</Fragment>
+          <Fragment key={block.id}>
+            {block.type === "image" ? (
+              <div className="z-50 relative">{renderBlock(block)}</div>
+            ) : (
+              renderBlock(block)
+            )}
+          </Fragment>
         ))}
       </article>
     </>

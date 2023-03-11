@@ -17,8 +17,41 @@
       */
   }
 
-  html * {
-    -webkit-tap-highlight-color: transparent;
-    text-rendering: optimizeLegibility;
+  .blurTop {
+    -webkit-mask-image: linear-gradient(
+      var(--direction),
+      var(--mask-visible) 25%,
+      var(--mask-hidden)
+    );
+    mask-image: linear-gradient(
+      var(--direction),
+      var(--mask-visible) 25%,
+      var(--mask-hidden)
+    );
+  }
+
+  .bgA {
+    background: linear-gradient(
+      var(--direction),
+      var(--bg),
+      var(--transparent)
+    );
+  }
+
+  .bgDark {
+    background: linear-gradient(
+      var(--direction),
+      var(--bg-dark),
+      var(--transparent)
+    );
+  }
+
+  :root {
+    --transparent: transparent;
+    --bg: #efefef;
+    --bg-dark: #0e0e0e;
+    --direction: to bottom;
+    --mask-visible: #000;
+    --mask-hidden: transparent;
   }
 }

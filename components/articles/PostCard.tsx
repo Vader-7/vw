@@ -13,9 +13,7 @@ const localizedFormat = require("dayjs/plugin/localizedFormat")
 export const PostCard: FunctionComponent<{ post: any }> = ({ post }) => {
   dayjs.extend(localizedFormat)
   return (
-    <Link
-      href={`/thoughts/${post.id}`}
-      passHref>
+    <Link href={`/thoughts/${post.id}`} passHref>
       <motion.div
         key={post.id}
         className="flex-col shadow-lg"

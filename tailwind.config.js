@@ -31,6 +31,10 @@ module.exports = {
         sfPro: '"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu, Cantarell,"Open Sans","Helvetica Neue",sans-serif',
         jetBrains: ['var(--font-jetbrains)', ...fontFamily.mono],
       },
+      colors: {
+        'light': '#efefef',
+        'dark': '#0e0e0e',
+      },
       transitionDuration: {
         '0': '0ms',
         '2000': '2000ms',

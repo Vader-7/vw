@@ -37,8 +37,8 @@ export function NavBar() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-      </NavigationMenuList >
-    </NavigationMenu >
+      </NavigationMenuList>
+    </NavigationMenu>
   )
 }
 
