@@ -43,7 +43,7 @@ export default function RootLayout({
         {pathname !== "/" ? (
           <>
             <TopLayer />
-            <div className="container py-1 lg:py-2">
+            <div className="container py-2 lg:py-4">
               <motion.div initial="hidden" animate="visible" variants={variant}>
                 <NavBar />
               </motion.div>
